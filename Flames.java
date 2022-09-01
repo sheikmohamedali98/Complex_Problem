@@ -9,9 +9,9 @@ public class Flames {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter Boy name : ");
-		String name1 = scan.nextLine();
+		String name1 = scan.nextLine().toLowerCase();
 		System.out.println("Enter Girl name : ");
-		String name2 = scan.nextLine();
+		String name2 = scan.nextLine().toLowerCase();
 		
 		
 		flame(name1,name2);
