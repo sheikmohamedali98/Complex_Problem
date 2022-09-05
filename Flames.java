@@ -65,24 +65,25 @@ public class Flames {
 		return String.valueOf(ch);
 	}
 
-	private static char findChar(String str) {
-		String flame = "FLAMES";
-		int len = flame.length();
-		int temp = 0;
-		char relation = ' ';
-		
-		if(str.length()>0) {
-		 temp = str.length()%len;
-		}
-		if(temp ==0&&len>=6) {
-			relation = 'S';
-		}else {
-			int count = temp-1;
-			if(count>=0) {
-				relation = flame.charAt(count);
-			}
-		}
-		return relation;
+		private static char findChar(String str) {
+		 String flames = "FLAMES";
+	        StringBuilder sb = new StringBuilder(flames);
+	        char relationship = ' ';
+	        while(sb.length()!=1)
+	        {
+	            int reminder = str.length()%sb.length(); 
+	            String store;
+	            
+	            if(reminder!=0){
+	                store = sb.substring(reminder)+sb.substring(0, reminder-1);  
+	            }else{
+	                store = sb.substring(0, sb.length()-1);
+	            }
+	            sb = new StringBuilder(store);
+	           relationship = sb.charAt(0);
+			
+	        }
+	       return relationship;
 	}
 
 	private static String relationShip(char ch) {
